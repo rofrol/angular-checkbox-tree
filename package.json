@@ -1,0 +1,23 @@
+{
+  "name": "angular-checkbox-tree",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rofrol/angular-checkbox-tree.git"
+  },
+  "author": "Roman Frołow",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/rofrol/angular-checkbox-tree/issues"
+  },
+  "homepage": "https://github.com/rofrol/angular-checkbox-tree#readme",
+  "dependencies": {
+    "angular": "1.5.0",
+    "font-awesome": "4.5.0"
+  }
+}

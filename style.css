@@ -1,0 +1,21 @@
+.table-nested .indent {
+    display: inline-block;
+    cursor: pointer;
+}
+.table-nested .parent > .cell-name > .indent:before {
+    content: "\f196";
+    font-family: FontAwesome;
+    display: inline-block;
+}
+.table-nested .opened > tr > .cell-name > .indent:before {
+    content: "\f147";
+}
+.table-nested .children {
+    display: none;
+}
+.table-nested .opened > .children {
+    display: table-row;
+}
+.table-child {
+    margin-left: 30px;
+}

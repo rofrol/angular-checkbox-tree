@@ -1,0 +1,27 @@
+<!doctype html>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+<script src="node_modules/angular/angular.js"></script>
+<div class="wrapper" ng-app="testApp" ng-controller="treeTable">
+    <table class="table-nested">
+        <tbody ng-class="{opened: item.opened}" ng-include="'table_tree.html'" ng-repeat="item in list"></tbody>
+    </table>
+    <script id="table_tree.html" type="text/ng-template">
+        <tr ng-class="{parent: item.children}" ng-init="parentScope = $parent.$parent; initCheckbox(item, parentScope.item)">
+            <td class="cell-name">
+                <div class="indent" ng-click="item.opened = !item.opened"></div>
+                <input ng-change="toggleCheckbox(item, parentScope)" ng-model="item.selected" type="checkbox" />
+                {{item.name}}
+            </td>
+        </tr>
+        <tr class="children" ng-if="item.children && item.children.length > 0">
+            <td colspan="4">
+                <table class="table-child">
+                    <tbody ng-class="{opened: item.opened}" ng-include="'table_tree.html'" ng-init="level = level + 1" ng-repeat="item in item.children"></tbody>
+                </table>
+            </td>
+        </tr>
+    </script>
+</div>
+<script src="node_modules/angular/angular.js"></script>
+<script src="app.js"></script>
